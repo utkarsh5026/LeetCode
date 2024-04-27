@@ -26,10 +26,10 @@ class Solution {
         return numsSet;
     }
 
-    private List<Integer> findSetDiffElements(Set<Integer> aSet, Set<Integer> bSet) {
+    private List<Integer> findSetDiffElements(Set<Integer> a, Set<Integer> b) {
         List<Integer> diff = new ArrayList<>();
-        for (int num : aSet) {
-            if (bSet.contains(num))
+        for (int num : a) {
+            if (b.contains(num))
                 continue;
             diff.add(num);
         }
