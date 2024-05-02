@@ -2,6 +2,8 @@ package arrays.easy;
 
 import java.util.*;
 
+// https://leetcode.com/problems/summary-ranges/description/
+// 228. Summary Ranges
 class Solution {
     public List<String> summaryRanges(int[] nums) {
         List<String> result = new ArrayList<>();
