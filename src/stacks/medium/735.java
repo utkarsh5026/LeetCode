@@ -18,8 +18,7 @@ class Solution {
             }
             int prevAsteroid = remainingAsterioids.peekLast();
             remainingAsterioids.add(asteroid);
-
-            if (!asteroidsWillCollide(prevAsteroid, asteroid))
+            if (asteroidsWillCollide(prevAsteroid, asteroid))
                 destoryAsteroids(remainingAsterioids);
         }
 
@@ -35,13 +34,11 @@ class Solution {
     }
 
     private void destoryAsteroids(Deque<Integer> asteroids) {
-
         while (asteroids.size() > 1) {
-            System.out.println(asteroids);
             int last = asteroids.pollLast();
             int secondLast = asteroids.pollLast();
 
-            if (asteroidsWillCollide(secondLast, last)) {
+            if (!asteroidsWillCollide(secondLast, last)) {
                 asteroids.add(secondLast);
                 asteroids.add(last);
                 break;
