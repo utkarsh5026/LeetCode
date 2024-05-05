@@ -11,13 +11,11 @@ class Solution {
             char sChar = s.charAt(sIdx);
             char tChar = t.charAt(tIdx);
 
-            System.out.println(sChar + " " + tChar);
             if (tChar == sChar)
                 sIdx++;
             tIdx++;
         }
 
-        System.out.println(tIdx);
         return sIdx == s.length();
     }
 }
