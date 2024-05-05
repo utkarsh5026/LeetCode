@@ -1,4 +1,4 @@
-package hash_tables.medium;
+package arrays.medium;
 
 // https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 // 167. Two Sum II - Input Array Is Sorted
