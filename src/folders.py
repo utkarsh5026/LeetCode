@@ -17,6 +17,12 @@ def create_folders(folder_name):
 dataStructures = ['arrays', 'linked_lists', 'stacks', 'queues',
                   'trees', 'graphs', 'heaps', 'hash_tables', 'strings']
 
+alogorithms = ['dynamic_programming', 'greedy',
+               'two_pointers', 'backtracking', 'sliding_window']
+
 
 for ds in dataStructures:
     create_folders(ds)
+
+for algo in alogorithms:
+    create_folders(algo)
