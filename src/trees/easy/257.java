@@ -2,8 +2,6 @@ package trees.easy;
 
 import java.util.*;
 
-import javax.print.DocFlavor.STRING;
-
 class TreeNode {
     int val;
     TreeNode left;
