@@ -29,7 +29,6 @@ class Solution {
             return 0;
 
         PriorityQueue<Long> results = new PriorityQueue<>(Collections.reverseOrder());
-        Set<Long> sums = new HashSet<>();
         Deque<TreeNode> queue = new ArrayDeque<>();
 
         queue.add(root);
@@ -45,11 +44,7 @@ class Solution {
                 if (node.right != null)
                     queue.add(node.right);
             }
-
-            if (sums.contains(sum))
-                continue;
             results.add(sum);
-            sums.add(sum);
         }
 
         if (results.size() < k)
