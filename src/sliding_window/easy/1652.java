@@ -14,23 +14,43 @@ class Solution {
             return decrypted;
         }
 
-        int[] prefixSum = new int[2 * n + 1];
-        for (int i = 1; i <= 2 * n; i++) {
-            prefixSum[i] = prefixSum[i - 1] + code[(i - 1) % n];
-        }
+        int[] prefixSum = getPrefixSum(code);
 
         for (int i = 0; i < n; i++) {
+            int sum = 0;
             if (k > 0) {
-                // Sum from i+1 to i+k, handle circular array indexing
-                decrypted[i] = prefixSum[i + k + 1] - prefixSum[i + 1];
+                // Calculate indices for summing k elements to the right
+                int start = (i + 1) % n;
+                int end = (i + k) % n;
+                if (end >= start) {
+                    sum = prefixSum[end] - (start > 0 ? prefixSum[start - 1] : 0);
+                } else {
+                    // Wrap around case
+                    sum = prefixSum[n - 1] - (start > 0 ? prefixSum[start - 1] : 0) + prefixSum[end];
+                }
             } else {
-                // Sum from i+k to i-1, handle circular array indexing
-                int start = i + k + n; // Adjust for negative k
-                int end = i + n; // We need to include index i-1
-                decrypted[i] = prefixSum[end] - prefixSum[start];
+                // Calculate indices for summing |k| elements to the left
+                int start = (i + k + n) % n;
+                int end = (i - 1 + n) % n;
+                if (start <= end) {
+                    sum = prefixSum[end] - (start > 0 ? prefixSum[start - 1] : 0);
+                } else {
+                    sum = prefixSum[end] + (start > 0 ? prefixSum[n - 1] - prefixSum[start - 1] : prefixSum[n - 1]);
+                }
             }
-        }
 
+            decrypted[i] = sum;
+        }
         return decrypted;
+    }
+
+    private int[] getPrefixSum(int[] code) {
+        int n = code.length;
+        int[] prefixSum = new int[n];
+        prefixSum[0] = code[0];
+        for (int i = 1; i < n; i++) {
+            prefixSum[i] = prefixSum[i - 1] + code[i];
+        }
+        return prefixSum;
     }
 }
