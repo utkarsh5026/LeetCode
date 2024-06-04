@@ -15,11 +15,8 @@ class Solution {
             int prevCompare = Integer.compare(arr[i - 1], arr[i]);
             if (prevCompare == 0) {
                 left = i;
-                continue;
             } else if (i < arr.length - 1) {
                 int nextCompare = Integer.compare(arr[i], arr[i + 1]);
-
-                System.out.println(prevCompare + " " + nextCompare + " " + i);
                 if (nextCompare * prevCompare != -1) {
                     maxSize = Math.max(maxSize, i - left + 1);
                     left = i;
