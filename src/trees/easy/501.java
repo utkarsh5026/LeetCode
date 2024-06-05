@@ -38,7 +38,6 @@ class Solution {
             frequencyMap.put(value, frequencyMap.getOrDefault(value, 0) + 1);
         }
 
-        // Determine the maximum frequency
         int maxFrequency = 0;
         for (int freq : frequencyMap.values()) {
             if (freq > maxFrequency) {
