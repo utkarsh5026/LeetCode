@@ -1,5 +1,7 @@
 package graphs.medium;
 
+// https://leetcode.com/problems/number-of-closed-islands/description/
+// 1254. Number of Closed Islands
 class Solution {
     public int closedIsland(int[][] grid) {
         visitAllIslandsAtBorder(grid);
@@ -45,7 +47,6 @@ class Solution {
             for (int j = 0; j < cols; j++) {
                 if (grid[i][j] == 1)
                     continue;
-                System.out.println(i + " " + j);
                 dfs(i, j, grid, rows, cols);
                 closedIslands++;
             }
