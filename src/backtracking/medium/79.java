@@ -18,9 +18,7 @@ class Solution {
     }
 
     boolean find(int i, int j, int wordIdx, char[][] board, String word) {
-        System.out.println(i + " " + j);
         if (wordIdx >= word.length()) {
-            System.out.println(i + " " + j + wordIdx + " " + word.length());
             return true;
         }
 
