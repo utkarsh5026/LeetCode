@@ -51,7 +51,6 @@ class Solution {
                 closedIslands++;
             }
         }
-
         return closedIslands;
     }
 
