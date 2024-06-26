@@ -39,7 +39,6 @@ class Allocator {
                 }
 
                 if (cnt == size) {
-                    System.out.println(cnt + " " + idx);
                     allocation.get(mID).add(new Block(start, start + size - 1));
                     for (int i = start; i < start + size; i++) {
                         memory[i] = mID;
