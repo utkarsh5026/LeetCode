@@ -2,8 +2,6 @@ package heaps.medium;
 
 import java.util.*;
 
-import java.util.*;
-
 // https://leetcode.com/problems/exam-room/description
 // 855. Exam Rooms
 class ExamRoom {
