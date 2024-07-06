@@ -2,8 +2,6 @@ package linked_lists.medium;
 
 import java.util.*;
 
-import jdk.nashorn.internal.runtime.regexp.joni.ast.Node;
-
 class ListNode {
     int val;
     ListNode next;
