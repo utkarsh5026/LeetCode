@@ -1,7 +1,7 @@
 package dynamic_programming.medium;
 
 // https://leetcode.com/problems/count-substrings-that-differ-by-one-character/description/
-//1638. Count Substrings That Differ by One Character
+// 1638. Count Substrings That Differ by One Character
 class Solution {
     public int countSubstrings(String s, String t) {
         int m = s.length();
