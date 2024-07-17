@@ -26,27 +26,28 @@ class Solution {
         return ans;
     }
 
-    private int minFallingPathSum(int[][] A, int row, int col, int[][] dp) {
-        int m = A.length;
-        int n = A[0].length;
+    private int minFallingPathSum(int[][] mat, int row, int col, int[][] dp) {
+        int m = mat.length;
+        int n = mat[0].length;
 
         if (dp[row][col] != Integer.MAX_VALUE)
             return dp[row][col];
 
         if (row == m - 1)
-            return dp[row][col] = A[row][col];
+            return dp[row][col] = mat[row][col];
 
-        int left = Integer.MAX_VALUE, right = Integer.MAX_VALUE;
+        int left = Integer.MAX_VALUE;
+        int right = Integer.MAX_VALUE;
 
         if (col > 0)
-            left = minFallingPathSum(A, row + 1, col - 1, dp);
+            left = minFallingPathSum(mat, row + 1, col - 1, dp);
 
-        int straight = minFallingPathSum(A, row + 1, col, dp);
+        int straight = minFallingPathSum(mat, row + 1, col, dp);
 
         if (col < n - 1)
-            right = minFallingPathSum(A, row + 1, col + 1, dp);
+            right = minFallingPathSum(mat, row + 1, col + 1, dp);
 
-        dp[row][col] = Math.min(left, Math.min(straight, right)) + A[row][col];
+        dp[row][col] = Math.min(left, Math.min(straight, right)) + mat[row][col];
 
         return dp[row][col];
     }
