@@ -1,4 +1,4 @@
-package graphs.medium;
+package dynamic_programming.medium;
 
 import java.util.HashSet;
 import java.util.Set;
