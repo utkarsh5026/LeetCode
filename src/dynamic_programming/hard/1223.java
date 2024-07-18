@@ -1,6 +1,8 @@
 package dynamic_programming.hard;
 
 
+import java.util.Arrays;
+
 // https://leetcode.com/problems/dice-roll-simulation/description/
 // 1223. Dice Roll Simulation
 class Solution {
