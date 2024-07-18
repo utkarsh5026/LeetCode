@@ -21,14 +21,17 @@ class Solution {
 
         // Step 1: Find the maximum length of increasing subsequence
         int maxLen = 0;
+        int[] lengths = new int[n];
         for (int i = 0; i < n; i++) {
-            maxLen = Math.max(maxLen, maxLength(i));
+            int currMaxLength = maxLength(i);
+            lengths[i] = currMaxLength;
+            maxLen = Math.max(maxLen, currMaxLength);
         }
 
         // Step 2: Count the number of subsequences with maximum length
         int result = 0;
         for (int i = 0; i < n; i++) {
-            if (maxLength(i) == maxLen) {
+            if (lengths[i] == maxLen) {
                 result += countMaxLength(i, maxLen);
             }
         }
