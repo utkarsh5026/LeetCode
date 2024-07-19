@@ -11,11 +11,11 @@ class Solution {
         int n = matrix[0].length;
 
         Set<Integer> minInRows = new HashSet<>();
-        for (int i = 0; i < m; i++) {
-            int min = matrix[i][0];
+        for (int[] ints : matrix) {
+            int min = ints[0];
             for (int j = 1; j < n; j++) {
-                if (matrix[i][j] < min) {
-                    min = matrix[i][j];
+                if (ints[j] < min) {
+                    min = ints[j];
                 }
             }
             minInRows.add(min);
