@@ -15,7 +15,6 @@ class Solution {
         for (int i = 0; i < nums.length; i++) {
             Set<Integer> currNums = new HashSet<>();
             for (int j = i; j < nums.length; j++) {
-
                 currNums.add(nums[j]);
                 if (currNums.size() != unique.size())
                     continue;
