@@ -15,7 +15,6 @@ class ProductOfNumbers {
 
     public void add(int num) {
         if (num == 0) {
-            // If we add 0, we reset our list as all future products will be 0
             this.prefixProducts = new ArrayList<>();
             this.prefixProducts.add(1);
         } else {
